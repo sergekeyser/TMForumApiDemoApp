@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 export class HomePage {
   offers: Observable<any>;	
    constructor(public httpClient: HttpClient) { 
-    this.offers = this.httpClient.get('https://anypoint.mulesoft.com/mocking/api/v1/links/9295214c-f1b8-4538-8fe8-4d23432cb940/tmf-api/promotionManagement/v2/promotion');
+    this.offers = this.httpClient.get('http://e-digital-telco-mule-app.uk-e1.cloudhub.io/api/promotionmanagement/promotion');
     this.offers 
     .subscribe(data => {
       console.log('my data: ', data[0]);

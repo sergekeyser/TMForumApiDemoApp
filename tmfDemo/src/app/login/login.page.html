@@ -1,0 +1,13 @@
+<ion-content padding center text-center>
+	<ion-title>TM Framework on Mulesoft!</ion-title>
+	<ion-list>
+		<ion-item>
+			<ion-input placeholder="User name" [(ngModel)]="name"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+		</ion-item>
+	</ion-list>
+	<ion-button expand="block" (click)="login()" >Log in</ion-button>
+	<ion-button expand="block">Sign up</ion-button>
+</ion-content>
