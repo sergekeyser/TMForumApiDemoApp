@@ -30,8 +30,14 @@ export class LoginPage implements OnInit {
 		this.customerdata = this.httpClient.get('http://e-digital-telco-mule-app.uk-e1.cloudhub.io/api/federated/userinfo',options);
 		this.customerdata 
 		.subscribe(data => {
-		   if (data.given_name == this.name)
-			this.router.navigateByUrl('/home');	
+		   if (data.given_name == this.name) {
+			  var navigationExtras = {
+				  queryParams: {
+					jsondata: JSON.stringify(data)
+				  }
+				}
+			this.router.navigate(['/home'],navigationExtras);
+		   }			
 			else
 			console.log('error!')	
 		  })
