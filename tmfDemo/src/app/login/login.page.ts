@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 	name:string;
 	password: string;
+	warningtext: string;
 
   constructor(public menuCtrl: MenuController,public httpClient: HttpClient, private router: Router) {
 	  }
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
 		console.log(this.password);
 		const options = {
 			headers: {
-					'Authorization': 'blabla'
+					'Authorization': '01234567BBC'
 				}
 		}
 		
@@ -39,10 +40,17 @@ export class LoginPage implements OnInit {
 			this.router.navigate(['/home'],navigationExtras);
 		   }			
 			else
-			console.log('error!')	
+			{	
+				this.warningtext="User name or password not correct, please try again"
+				console.log('error!')	
+			}
 		  })
 	  }
-		  
+		
+ionClearErrorMessage()
+{
+	this.warningtext=""
+}
 ionViewWillEnter() {
           this.menuCtrl.enable(false);
        }
