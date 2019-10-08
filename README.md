@@ -8,12 +8,12 @@ npm install -g ionic
 Then cd into the right directory: 
 cd ./TMForumApiDemoApp/tmfDemo
 
-Then launch ionic:
+Then install all the libraries:
+npm install
 
+Then launch ionic:
 ionic serve
 
 This opens the app in a webpage.
-
-Login name that is usable is: John (no password)
 
 Data is all mocked.
